@@ -33,7 +33,6 @@
             const jurosEL = document.querySelector("#juros")
             const tempoEL = document.querySelector("#tempo")
             const resultEL = document.querySelector("#result")
-
             const capital =  Number(capitalEL.value)
             const juros =  Number(jurosEL.value)/100
             const tempo =  Number(tempoEL.value)
@@ -44,9 +43,11 @@
 
             }
         
-        
-        
         const montante = capital*(Math.pow(1 +juros,tempo))//composto
-        resultEL.textContent = montante.toLocaleString("pt-br",{style:"currency",currency: "BRL"})
-}
-       
+        resultEL.textContent = montante.toLocaleString("pt-br",{style:"currency",currency: "BRL"})  
+
+    }
+   </script>
+
+</body>
+</html>
