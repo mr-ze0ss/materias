@@ -37,9 +37,9 @@
         Apply for your loan width one of these fine lenders:
         <div id="lenders"></div></td></tr>
 </table>
-<script src="/display.js" >
+<script>
     
-    /*
+    
     function calculate() {
         var amount = document.getElementById("amount"); //quantia
         var apr = document.getElementById("apr") //pagamento aproximado
@@ -48,19 +48,15 @@
         var payment = document.getElementById("payment");  //pagamento
         var total = document.getElementById("total"); //total
         var totalineterest = document.getElementById("totalineterest") //juros total
+        var principal = parseFloat(amount.value);
+        var interest = parseFloat(apr.value) / 100 / 12;
+        var payments = parseFloat(years.value) /12;
+    
     }
-    
-    //converte de porcentagem pra decimal e taxa mensal e anual, passa de periodo para o periodo em anos
-    var principal = parseFloat(amount.value);
-    var interest = parseFloat(apr.value) / 100 / 12;
-    var payments = parseFloat(years.value) /12;
-    
-    var x = Math.pow(1 + interest, payments); //calculo de potência
+
+    var x = Math.pow(1 + interest, payments);
     var monthly = (principal*x*interest)/(x-1);
     
-
-
-    /*
     if (isFinite(monthly)){
         payment.innerHTML = monthly.toFixed(2);
         total.innerHTML = (monthly*payments).toFixed(2);
@@ -120,7 +116,7 @@ function getLenders(amount, apr, years,zipcode){
     if (req.readyState == 4 && req.status == 200){
         var reponse = req.responseText;
         var lenders = JSON.parse(response);
-    
+        
     
         var list = "";
         for(var i = 0; i <lenders.legth; i++){
